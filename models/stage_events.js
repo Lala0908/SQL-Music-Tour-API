@@ -14,13 +14,26 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Stage_Events.init({
-    stage_eve
-    nts_id: DataTypes.INTEGER,
-    state_id: DataTypes.SMALLINT,
-    event_id: DataTypes.SMALLINT
+    stage_events_id: {
+      allowNull: false,
+      autoIncrement: true,
+      primaryKey: true,
+      type: Sequelize.INTEGER
+    },
+    stage_id: {
+      type: Sequelize.SMALLINT
+    },
+
+    event_id: {
+      type: Sequelize.SMALLINT
+    },
+   
   }, {
-    sequelize,
+    Sequelize,
     modelName: 'Stage_Events',
+    tableName: 'stage_events',
+    timestamps: false
+  
   });
   return Stage_Events;
 };
